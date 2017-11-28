@@ -1,7 +1,8 @@
 /*
 // Problem #1
 // ****** This works *****
-// Write a function which takes an array of numbers, and returns the largest number in that array.
+// Write a function which takes an array of numbers, and 
+// returns the largest number in that array.
 
 var num = [4, 2, 5, 1, 3];
 num.sort(function(a, b) {
@@ -73,7 +74,7 @@ console.log(prob(nums));
 */
 
 
-/*
+
 // Problem #5
 // Write function that translates a text to Pig Latin, 
  // and another that translates back. English is translated 
@@ -87,27 +88,27 @@ console.log(prob(nums));
 // input transformed into the out of pig latin
 
 // ****** Converts TO Pig Latin *****************
-var pigLatin = "The quick brown fox";
+// var pigLatin = "The quick brown fox";
 
-function createPigLatinWord( sentence ) {
-	var result = [];
-	var workArray = [];
-	console.log(sentence);
+// function createPigLatinWord( sentence ) {
+// 	var result = [];
+// 	var workArray = [];
+// 	// console.log(sentence);
 
-	workArray = sentence.split(' ')
-	console.log(workArray)
+// 	workArray = sentence.split(' ')
+// 	// console.log(workArray)
 
-	workArray.forEach(function( element, index ) {
-		result.push(element.substr(1) + element.substr(0, 1).toLowerCase() + 'ay');
-	});
-	result[0] = result[0].substr(0,1).toUpperCase() + result[0].substr(1);
-	console.log(result[0]);
-	console.log(result.join(" "));
+// 	workArray.forEach(function( element, index ) {
+// 		result.push(element.substr(1) + element.substr(0, 1).toLowerCase() + 'ay');
+// 	});
+// 	result[0] = result[0].substr(0,1).toUpperCase() + result[0].substr(1);
+// 	// console.log(result[0]);
+// 	// console.log(result.join(" "));
 
-	return result;
-}
+// 	return result.join(" ");
+// }
 
-console.log(createPigLatinWord(pigLatin));
+// console.log(createPigLatinWord(pigLatin));
 
 
 // ****** Converts BACK to English *****************
@@ -117,33 +118,36 @@ console.log(createPigLatinWord(pigLatin));
 // 
 // OUTPUT = string
 
-var english = "Hetay uickqay rownbay oxfay";
+// var english = "Hetay uickqay rownbay oxfay";
 
-function createEnglish( sentence ) {
-    var result = [];
-    var workArray = [];
-    console.log(sentence);
+// function createEnglish( sentence ) {
+//     var result = [];
+//     var workArray = [];
+//     // console.log(sentence);
 
-    // Convert word string into string array of words
-    workArray = sentence.split(' ')
-    console.log(workArray)
+//     // Convert word string into string array of words
+//     workArray = sentence.split(' ');
+//     // console.log(workArray)
 
-    // Remove "ay" from end of each word
-    workArray.forEach(function( element, index ) {
-        result.push(element.slice(0, element.length-2));
-      console.log(result);
-      
-//     reverse the order of the letters of each word
-        result.push(element.split("").reverse().join(""));
-      console.log(result);
-      
-    });
+//     // Remove "ay" from end of each word
+//     workArray.forEach(function( element, index ) {
+//
+//         // removes ay and isolates "first" letter
+//         var firstLetter = element.slice(element.length-3, element.length-2);
+//       // console.log(firstLetter);
+//       var restOfWord = element.slice(0, element.length-3);
+//       // console.log(restOfWord);
+//       result.push(firstLetter + restOfWord);
+//     });
 
-    return result;
-}
-console.log(createEnglish(english));
 
-*/
+
+//     // Returns a string
+//     return result.join(" ");
+// };
+// console.log(createEnglish(english));
+
+
 
 /*
 // Problem #6
@@ -263,65 +267,56 @@ console.log(mergeSortedLists(listOne, listTwo));
 */
 
 
-/*
+
 // ****** Problem #11 ********
+
+// ****** It works!! ********
+
 // Write a function that uses `Math.random()` to generate a random number between 0-1. 
 // Replace all the 3's with 8's, and replace all the 7's with 1's, then return this number. 
 // Note that this function should return a `number`, not a `string`.
 
-function prob() {
-	var workNum = Math.random();
-	var workStr = workNum.toString();
-	var workArr = workStr.split('');
-	var result = [];
+// function prob() {
+// 	var workNum = Math.random();
+//   // console.log(workNum);
+// 	var workStr = workNum.toString();
+//   console.log(workStr);
+// 	var workArr = workStr.split('');
 
-	result = workArr.map(function(element){
-		if(element === 3) {
-			element = 8;
-		}
+//   for ( i = 0; i < workArr.length; i++) {
+//     if ( workArr[i] === '3') {
+//      workArr[i] = '8';
+//    }
+//    if ( workArr[i] === '7') {
+//      workArr[i] = '1';
+//    }
+//  };
+//  // workArr.join();
+//  return workArr.join('');
+// };
 
-		if (element === 7) {
-			element = 1;
-		}
-		return element;
-	})
-	// console.log(parseFloat(result.join(''));
-};
-
-console.log(prob())
-*/
+// console.log(prob());
 
 
-/*
 // Problem #12
 // ******* works (sort of) *********
-// Write a function which accepts a sentence as a string, and returns the longest word in that sentence.
+// Write a function which accepts a sentence as a string, and 
+// returns the longest word in that sentence.
 
-// returns length in character count
-// not sureif that's exaclty what you're looking for?
+// function findTheLongestWord(str) {
+//     var wordString = str.split(" ");
 
-function findTheLongestWord(str) {
-        // split the string into an array of words
-     var wordArray = str.split(' ');
-     console.log(wordArray);
-        // variable holds longest word
-     var wordLength = 0;
-     console.log(wordLength);
-        // loop through each word
-        // compare the length of each word to
-        // the previous one
-        // if it's longer then store it
-        // in wordLength
-     for (var i = 0; i < wordArray.length; i++){
-         if (wordArray[i].length > wordLength){
-           wordLength = wordArray[i].length;
-         };
-     };
-     return wordLength;
-};
+//     var longestWord = '';
 
-console.log(findTheLongestWord("The quick brown fox jumps over the lazy dogs back"));
-*/
+//     for (i = 0; i < wordString.length; i++) {
+//       if (wordString[i].length >= longestWord.length) {
+//         longestWord = wordString[i];
+//       }
+//     }
+//     return longestWord;
+//   };
+
+//   console.log(findTheLongestWord("The person had a big breakfast"));
 
 /*
 // Problem #13
